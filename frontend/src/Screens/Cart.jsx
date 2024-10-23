@@ -19,7 +19,7 @@ const Cart = () => {
 
     useEffect(() => {
         const cart = () =>{
-            if(localStorage.getItem('Cart') === 'null'){
+            if(localStorage.getItem('Cart') === null){
                 setCart('')
             }else{
                 let item = JSON.parse(localStorage.getItem('Cart'))
@@ -107,7 +107,7 @@ const Cart = () => {
         <div className="cart"  >
 
             {
-                !cart ? <><h1 style={{fontSize:'40px' , fontWeight:'300',textAlign:'center' , color:'white' , marginTop:'100px'}}>Nothing added to Cart !</h1></> : 
+                cart.length === 0 ? <><h1 style={{fontSize:'40px' , fontWeight:'300',textAlign:'center' , color:'white' , marginTop:'100px'}}>Nothing added to Cart !</h1></> : 
                 <>
                 <h1 style={{fontSize:'40px' , fontWeight:'300' , color:'white' , margin:'0px 0px' , width:'60%' , margin:'auto' , marginTop:'30px'}} >Your Cart</h1>
                 {
