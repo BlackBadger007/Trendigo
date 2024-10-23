@@ -1,0 +1,58 @@
+.swiper-container {
+    position: relative;
+    width: 95%; /* Set desired width */
+    overflow: hidden; /* Hide overflow content */
+    border: 1px solid #ccc; /* Optional: border for visibility */
+    padding: 15px 0px;
+}
+
+.swiper-wrapper {
+    max-width: 90%;
+    display: flex; /* Align slides in a row */
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+.swiper-slide {
+    width: fit-content; /* Set width of each slide */
+    padding: 20px;
+    margin-left: 0px;
+    /* margin: 0px px; */
+    /* background-color: white; */
+    border-radius: 0.5rem;
+    /* background-color: #f0f0f0; Background color */
+    /* border-right: 1px solid #ccc; Optional: separator */
+}
+
+.swiper-container button {
+    position: absolute;
+    top: 50%;
+    height: 100%;width: 80px;
+    /* right: 0px; */
+    border: none;
+    /* margin-left: 50px ; */
+    /* margin: 0px 50px; */
+    background: none;
+    font-size: 0px;
+    font-weight: 300;
+    transform: translateY(-50%);
+    background-color: rgb(203, 203, 203);
+    /* background-color: white; */
+    /* border: 1px solid #ccc; */
+    cursor: pointer;
+    padding: 10px;
+    opacity: 0;
+    transition: font-size 0.3s ease, opacity 0.3s ease;
+}
+.swiper-container button:hover{
+    font-size: 25px;
+    opacity: 0.5;
+}
+
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
