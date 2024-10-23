@@ -21,7 +21,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors({
-    origin: 'http://localhost:3000', // Your frontend URL
+    origin: 'https://your-render-url.onrender.com', // Your frontend URL
     credentials: true
 }))
 app.use(cookieParser())
