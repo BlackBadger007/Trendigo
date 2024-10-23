@@ -4,7 +4,7 @@ import Order from "../models/orderModel.js"
 import nodemailer from "nodemailer"
 const router = express.Router()
 
-router.route('/place-order').post(asyncHandler(async (req , res) => {
+router.route('/place/order').post(asyncHandler(async (req , res) => {
     const {address , product , user , grandTotal} = req.body
     try{
         const order = await Order.create({address , product , user , grandTotal})
@@ -27,7 +27,7 @@ router.route('/user/:user_id').get(asyncHandler (async (req, res) => {
     res.json(orders)
 }))
 
-router.route('/otp').get(asyncHandler (async (req , res) => {
+router.route('/generate/otp').get(asyncHandler (async (req , res) => {
     let otp = Math.floor(100000 + Math.random() * 900000).toString();
 
     const transporter = nodemailer.createTransport({

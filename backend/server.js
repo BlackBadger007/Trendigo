@@ -15,8 +15,6 @@ import dotenv from "dotenv"
 dotenv.config()
 connectDB()
 
-console.log(process.env);
-
 const PORT = process.env.PORT
 const app = express()
 

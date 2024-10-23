@@ -31,7 +31,7 @@ const Orders = () => {
 
                 orders.map((order) => (
 
-                        <div className="ord-smr" style={order.status === 'delivered' ? {opacity : '0.6'} : {}} >
+                        <div className="ord-smr" key={order._id} style={order.status === 'delivered' ? {opacity : '0.6'} : {}} >
                         <div className="ord-head">
 
                         <h1>Placed on {order.createdAt} ({order.status}) </h1>
@@ -39,7 +39,7 @@ const Orders = () => {
                         </div>
             {
                 order.product.map((x) => (
-                    <div className="ord-smr-card"  >
+                    <div className="ord-smr-card" key={x._id} >
                         <img src={x.image} alt="" />
                         <h3>{x.brand} {x.title} </h3>
                         <h3>{x.qty}qty x $5000 : {x.qty * 5000}</h3>

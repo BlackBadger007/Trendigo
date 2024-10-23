@@ -20,7 +20,7 @@ const PlaceOrder = () => {
     const [otploading , setOtpLoading] = useState(false)
     const [cart , setCart] = useState([])
     const[total , setTotal] = useState(0)
-    const [otp , setOtp] = useState('place')
+    const [otp , setOtp] = useState('start')
     const [getOtp , setGetOtp] = useState('')
     const [askOtp , setAskOtp] = useState('')
     const [edit , setEdit] = useState(true)
@@ -41,7 +41,6 @@ const PlaceOrder = () => {
         }else{
             item = JSON.parse(localStorage.getItem('Product'))
         }
-        console.log(item);
         setCart(item)
         let sum = 0;
         item.map((x) => (sum += Number(x.price)*Number(x.qty)))
@@ -90,19 +89,23 @@ const PlaceOrder = () => {
     ){
         toast('Missing address field !')
         }else{
-            console.log(address);
             setEdit(!edit)
         }
     }
 
     const sendOtp = async () => {
-        setOtp('check')
-        setOtpLoading(true)
-        const {data} = await axios.get(`${API_URL}/order/otp` , { 
-            withCredentials : true
-        })
-        setGetOtp(data.otp)
-        setOtpLoading(false)
+        if(!edit){
+
+            setOtp('check')
+            setOtpLoading(true)
+            const {data} = await axios.get(`${API_URL}/order/generate/otp` , { 
+                withCredentials : true
+            })
+            setGetOtp(data.otp)
+            setOtpLoading(false)
+        }else{
+            toast("Missing Address")
+        }
     }
 
     const check = () => {
@@ -141,7 +144,7 @@ const PlaceOrder = () => {
             }
         }
 
-        const response  = await axios.post(`${API_URL}/order/place-order`, order , {withCredentials : true})
+        const response  = await axios.post(`${API_URL}/order/place/order`, order , {withCredentials : true})
 
         navigate(`/orders/${(JSON.parse(localStorage.getItem('UserTrendigo'))._id)}`)
     }
@@ -235,9 +238,9 @@ const PlaceOrder = () => {
 
             <div className="payment-div">
                 <h1>Payment Method</h1>
-                <input type="radio" checked={false} value="Card" /> <span>Card</span> <br />
-                <input type="radio" checked={false} value="UPI" /> <span>UPI</span> <br />
-                <input type="radio" checked={true} value="Cash on Delivery"/> <span>Cash on Delivery</span> <br />
+                <input type="radio" checked={false} value="Card" onChange={() => {}} /> <span>Card</span> <br />
+                <input type="radio" checked={false} value="UPI" onChange={() => {}} /> <span>UPI</span> <br />
+                <input type="radio" checked={true} value="Cash on Delivery" onChange={() => {}} /> <span>Cash on Delivery</span> <br />
             </div>
 
             <div className="place">
