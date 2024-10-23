@@ -14,7 +14,7 @@ export const apiSlice = createApi({
         }),
         getProducts : builder.query({
             query : () => ({
-                url : "/"
+                url : "/home"
             }),
             keepUnusedDataFor : 5
         }),
