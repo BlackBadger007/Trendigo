@@ -4,7 +4,7 @@ import { protect } from "../middleware/authMiddleware.js"
 import asyncHandler from "express-async-handler"
 const router = express.Router()
 
-router.route('/').get( protect ,asyncHandler(async (req , res) => {
+router.route('/home').get( protect ,asyncHandler(async (req , res) => {
     try{
         const products = await Product.find({})
         res.json(products) 
