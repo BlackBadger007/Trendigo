@@ -7,6 +7,7 @@ const router = express.Router()
 router.route('/home').get( protect ,asyncHandler(async (req , res) => {
     try{
         const products = await Product.find({})
+        console.log(products);
         res.json(products) 
     }catch(error){
         res.json({message : error.message})

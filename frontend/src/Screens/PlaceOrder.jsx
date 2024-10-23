@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Header from "../components/Header"
 import axios from "axios"
 import { useNavigate, useParams } from "react-router-dom"
+import API_URL from "../constant"
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet'
@@ -97,10 +98,9 @@ const PlaceOrder = () => {
     const sendOtp = async () => {
         setOtp('check')
         setOtpLoading(true)
-        const {data} = await axios.get(`${process.env.REACT_APP_API_URL}/order/otp` , { 
+        const {data} = await axios.get(`${API_URL}/order/otp` , { 
             withCredentials : true
         })
-        console.log(data);
         setGetOtp(data.otp)
         setOtpLoading(false)
     }
@@ -141,7 +141,7 @@ const PlaceOrder = () => {
             }
         }
 
-        const response  = await axios.post('http://localhost:5000/order/place-order', order , {withCredentials : true})
+        const response  = await axios.post(`${API_URL}/order/place-order`, order , {withCredentials : true})
 
         navigate(`/orders/${(JSON.parse(localStorage.getItem('UserTrendigo'))._id)}`)
     }

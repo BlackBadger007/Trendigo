@@ -3,6 +3,7 @@ import axios from "axios"
 import { useState } from "react"
 import Buffer from "../components/Buffer"
 import { FaEye } from "react-icons/fa"
+import API_URL from "../constant"
 import { ToastContainer , toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
@@ -47,7 +48,7 @@ const Signup = () => {
             toast("Password Mismatch")
             return
         }
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/signup` , user , {withCredentials : true} )
+        const response = await axios.post(`${API_URL}/auth/signup` , user , {withCredentials : true} )
 
         if(response.data.message === "already"){
             alert("User Already Exists")

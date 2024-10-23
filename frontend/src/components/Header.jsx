@@ -1,9 +1,10 @@
 import {FaUser , FaHeart , FaShoppingCart } from "react-icons/fa"
 import Search from "./Search"
-import { useLocation, useNavigate, useParams } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
+import API_URL from "../constant"
 
 const Header = () => {
 
@@ -43,7 +44,7 @@ const Header = () => {
     } ,[])
 
     const signout = async () => {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/auth/signout` , {withCredentials : true})
+        const response = await axios.get(`${API_URL}/auth/signout` , {withCredentials : true})
         if(response.data.message === 'success'){
             localStorage.setItem('UserTrendigo' , JSON.stringify(null) )
             localStorage.setItem('Cart' , JSON.stringify(null) )
