@@ -20,7 +20,7 @@ const PlaceOrder = () => {
     const [otploading , setOtpLoading] = useState(false)
     const [cart , setCart] = useState([])
     const[total , setTotal] = useState(0)
-    const [otp , setOtp] = useState('place')
+    const [otp , setOtp] = useState('start')
     const [getOtp , setGetOtp] = useState('')
     const [askOtp , setAskOtp] = useState('')
     const [edit , setEdit] = useState(true)
