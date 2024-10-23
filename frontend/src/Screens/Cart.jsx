@@ -19,7 +19,6 @@ const Cart = () => {
 
     useEffect(() => {
         const cart = () =>{
-<<<<<<< HEAD
             if(localStorage.getItem('Cart')){
                 if(localStorage.getItem('Cart') !== "null"){
 
@@ -32,10 +31,6 @@ const Cart = () => {
 
                     setCart([])
                 }
-=======
-            if(localStorage.getItem('Cart') === null){
-                setCart('')
->>>>>>> acc0dca3b608d98918f5590c32a1c30aef300f16
             }else{
                 setCart([])
             }
