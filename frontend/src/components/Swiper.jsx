@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import './index.css'; // Make sure your CSS file is imported
 
 const Swiper = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,11 +49,6 @@ const Swiper = () => {
     return (
         <div className="swiper-container">
             <div className="slides">
-                {/* {slides.map((src, index) => (
-                    <div className="slide" key={index}>
-                        <img src={src} alt={`Slide ${index + 1}`} />
-                    </div>
-                ))} */}
 
 <div className="slide">
                 <Link to={`/search/gadgets`} className="swip-category" >

@@ -1,5 +1,4 @@
 import { FaFacebook , FaInstagram , FaTwitter , FaCopyright } from "react-icons/fa"
-import { useNavigate } from "react-router-dom"
 
 const Footer = () => {
     return(

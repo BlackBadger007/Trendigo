@@ -43,7 +43,7 @@ const Header = () => {
     } ,[])
 
     const signout = async () => {
-        const response = await axios.get("http://localhost:5000/auth/signout" , {withCredentials : true})
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/auth/signout` , {withCredentials : true})
         if(response.data.message === 'success'){
             localStorage.setItem('UserTrendigo' , JSON.stringify(null) )
             localStorage.setItem('Cart' , JSON.stringify(null) )

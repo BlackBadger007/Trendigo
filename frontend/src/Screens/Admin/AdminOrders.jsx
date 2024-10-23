@@ -1,5 +1,5 @@
 import { useGetAllOrdersQuery } from "../../slices/apiSlice"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { FaChevronRight } from "react-icons/fa"
 import Buffer from "../../components/Buffer"
 import Header from "../../components/Header"
@@ -23,8 +23,6 @@ const AdminOrders = () => {
     if(isLoading){
         return <Buffer/>
     }else{
-        console.log(orders);
-
         return(
             <>
         <Header/>

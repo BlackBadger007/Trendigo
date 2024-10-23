@@ -31,7 +31,6 @@ app.use('/' , productRoutes)
 app.use('/order' , protect , orderRoutes)
 app.use('/admin' , protect , admin , adminRoutes)
 app.use('/auth' , authRoutes)
-
 app.use('/upload' , uploadRoutes)
 const __dirname = path.resolve()
 app.use('/uploads' , express.static(path.join(__dirname, '/uploads')))
@@ -43,4 +42,4 @@ app.get('*', (req, res) =>
 )
 
 
-app.listen(PORT , () => console.log(`Server is running at port : ${PORT}`.green.inverse))
+app.listen(PORT , () => console.log(`Server is running`.green.inverse))

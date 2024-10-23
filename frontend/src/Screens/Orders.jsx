@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react"
 import Header from "../components/Header"
 import { useGetOrdersQuery } from "../slices/apiSlice"
 import { useParams } from "react-router-dom"
-import { ToastContainer , toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { useNavigate } from "react-router-dom"
-import { Link } from "react-router-dom"
 import { FaChevronRight } from "react-icons/fa"
+import Buffer from "../components/Buffer"
 
 const Orders = () => {
 
@@ -16,12 +14,11 @@ const Orders = () => {
     const {data : orders , isLoading , isError} = useGetOrdersQuery(params._id)
 
     if(isLoading){
-        console.log("loading...");
+        return <Buffer/>
     }else{
  
         return(
             <>
-            <ToastContainer style={{fontSize:'20px' , fontWeight:'300'}} />
             <Header/>
 
             {orders.length === 0 ? <><h1 style={{fontSize:'40px' , fontWeight:'300',textAlign:'center' , color:'white' , marginTop:'100px'}}>No Order Placed !</h1></> : <>

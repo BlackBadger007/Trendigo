@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import Buffer from "../components/Buffer"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-import {FaUser , FaHeart , FaShoppingCart , FaMapMarkerAlt , FaTrash} from "react-icons/fa"
+import { FaTrash} from "react-icons/fa"
 import { ToastContainer , toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import Swal from 'sweetalert2';

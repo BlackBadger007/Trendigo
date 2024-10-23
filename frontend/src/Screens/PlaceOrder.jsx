@@ -97,7 +97,6 @@ const PlaceOrder = () => {
     const sendOtp = async () => {
         setOtp('check')
         setOtpLoading(true)
-        // const {data} = await axios.get("http://localhost:5000/order/otp" , { 
         const {data} = await axios.get(`${process.env.REACT_APP_API_URL}/order/otp` , { 
             withCredentials : true
         })

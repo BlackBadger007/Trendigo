@@ -28,11 +28,8 @@ const Search = () => {
         <div className="search">
 
             <form onSubmit={onSubmit}>
-
-            {/* <input type="text" id="input" placeholder="Search for Products, Brands and More" onChange={onChange}/> */}
             <input type="text" id="input" placeholder={!text ? "Search for Products, Brands and More" : text } value={val} onChange={onChange}/>
             </form>
-            {/* <button><FaSearch/></button> */}
         </div>
     )
 }

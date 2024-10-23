@@ -65,7 +65,6 @@ const AdminProduct = () => {
 
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/upload`, formData, {
-                // withCredentials: true,
                 headers: {
                     'Content-Type': 'multipart/form-data', // Set the correct content type
                 },
@@ -136,8 +135,6 @@ const AdminProduct = () => {
 
         return(
         <>
-
-
 
         <Header/>
         <ToastContainer style={{fontSize:'20px' , fontWeight:'300'}} />

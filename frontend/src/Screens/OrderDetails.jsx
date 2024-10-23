@@ -3,8 +3,8 @@ import { useGetOrderDetailsQuery } from "../slices/apiSlice"
 import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import { FaDotCircle } from "react-icons/fa"
-import { FaCircle } from "react-icons/fa"
 import { useEffect, useState } from "react"
+import Buffer from "../components/Buffer"
 
 const OrderDetails = () => {
 
@@ -41,7 +41,7 @@ const OrderDetails = () => {
     } , [order])
 
     if(isLoading){
-        console.log("loading...");
+        return<Buffer/>
     }else{
     console.log(order);
 

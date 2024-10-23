@@ -1,5 +1,5 @@
 import { useState , useEffect } from "react"
-import { useGetAllOrdersQuery, useGetAnOrderQuery } from "../../slices/apiSlice"
+import { useGetAnOrderQuery } from "../../slices/apiSlice"
 import { useParams } from "react-router-dom"
 import Header from "../../components/Header"
 import { Link } from "react-router-dom"

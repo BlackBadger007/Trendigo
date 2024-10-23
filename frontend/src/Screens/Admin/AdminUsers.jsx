@@ -1,4 +1,4 @@
-import { useGetAllOrdersQuery, useGetAllUsersQuery } from "../../slices/apiSlice"
+import { useGetAllUsersQuery } from "../../slices/apiSlice"
 import Header from "../../components/Header";
 import Buffer from "../../components/Buffer";
 
@@ -8,9 +8,7 @@ const AdminUsers = () => {
 
     if(isLoading){
         return <Buffer/>
-    }else{
-        console.log(users);
-        
+    }else{ 
         return(
             <>
             <Header/>

@@ -1,8 +1,4 @@
-// import axios from "axios"
-// import {useEffect} from "react"
-// as we are using redux we no longer need to use axios and useEffect
-
-import { useGetProductsQuery , useGetProductDetailsQuery } from "../slices/apiSlice"
+import { useGetProductsQuery  } from "../slices/apiSlice"
 import { Link } from "react-router-dom"
 import Buffer from "../components/Buffer"
 import Header from '../components/Header'
@@ -17,7 +13,6 @@ const Homescreen = () => {
     
 
     if(isLoading){
-        // console.log("loading.....")
         return<Buffer/>
 
     }else{
@@ -38,17 +33,6 @@ const Homescreen = () => {
         )
     }else{
 
-    }
-
-    
-
-    
-
-    
-    
-        
-
-          
         
         return(
             <>
@@ -83,6 +67,7 @@ const Homescreen = () => {
         <Footer/>
                     </>
         )}
+    }
        
 }
 

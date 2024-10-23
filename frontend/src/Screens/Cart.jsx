@@ -2,12 +2,10 @@ import { useEffect, useState } from "react"
 import Buffer from "../components/Buffer"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-import { FaTrash , FaEdit ,FaPlus , FaMinus ,FaCheck ,FaLink} from "react-icons/fa"
+import { FaTrash , FaEdit ,FaPlus , FaMinus ,FaCheck } from "react-icons/fa"
 import { ToastContainer , toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import Swal from 'sweetalert2';
-
-import {FaUser , FaHeart , FaShoppingCart , FaMapMarkerAlt} from "react-icons/fa"
 import Header from "../components/Header"
 
 const Cart = () => {
@@ -15,7 +13,6 @@ const Cart = () => {
     const navigate = useNavigate()
     const [cart , setCart] = useState('')
     const [loading , setLoading] = useState(true)
-    const [show , setShow] = useState(false)
     const [edit , setEdit] = useState('')
     const [qty , setQty] = useState()
     const [total , setTotal] = useState(0)
@@ -93,10 +90,6 @@ const Cart = () => {
                 toast('Product Removed') 
             }
         });
-
-    }
-
-    const signout = () => {
 
     }
 

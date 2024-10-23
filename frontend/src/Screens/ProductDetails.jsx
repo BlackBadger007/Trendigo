@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import Header from "../components/Header"
 import Navbar from "../components/Navbar"
@@ -13,7 +13,6 @@ import SimpleSwiper from './SimpleSwiper'
 
 const ProductDetails = () => {
 
-    const location = useLocation()
     const params = useParams()
     const navigate = useNavigate()
 
