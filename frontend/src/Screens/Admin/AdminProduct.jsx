@@ -69,7 +69,6 @@ const AdminProduct = () => {
                     'Content-Type': 'multipart/form-data', // Set the correct content type
                 },
             });
-            console.log(response);
             let img_url = response.data.image
 
             const productCopy = {
@@ -87,7 +86,6 @@ const AdminProduct = () => {
             }
 
             const response2 = await axios.post(`${process.env.REACT_APP_API_URL}/admin/create-product` , productCopy , {withCredentials : true})
-            console.log(response2.data);
             navigate(`/product/${response2.data._id}`)
 
 
