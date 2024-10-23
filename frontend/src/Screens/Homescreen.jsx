@@ -16,7 +16,6 @@ const Homescreen = () => {
         return<Buffer/>
 
     }else{
-        console.log(process.env);
 
     if(!products){
         return(
