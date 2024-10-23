@@ -48,7 +48,6 @@ const Signup = () => {
             return
         }
         const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/signup` , user , {withCredentials : true} )
-        console.log(response.data)
 
         if(response.data.message === "already"){
             alert("User Already Exists")
