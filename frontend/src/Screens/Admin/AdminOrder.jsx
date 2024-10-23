@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 import Header from "../../components/Header"
 import { Link } from "react-router-dom"
 import { FaDotCircle } from "react-icons/fa"
+import Buffer from "../../components/Buffer"
 import axios from "axios"
 
 const AdminOrder = () => {
@@ -46,49 +47,49 @@ const AdminOrder = () => {
 
         if(e.target.value === 'accept' && status < 1 ){
             setStatus(1)
-            const response = await axios.put(`http://localhost:5000/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
+            const response = await axios.put(`${process.env.REACT_APP_API_URL}/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
         console.log(response.data);
         console.log("update Stocks");
             
         }
         if(e.target.value === 'processing' && status < 2){
             setStatus(2)
-            const response = await axios.put(`http://localhost:5000/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
+            const response = await axios.put(`${process.env.REACT_APP_API_URL}/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
         console.log(response.data);
         console.log("update Stocks");
          
         }
         if(e.target.value === 'dispatch' && status < 3){
             setStatus(3)
-            const response = await axios.put(`http://localhost:5000/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
+            const response = await axios.put(`${process.env.REACT_APP_API_URL}/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
         console.log(response.data);
         console.log("update Stocks");
            
         }
         if(e.target.value === 'transporting' && status < 4){
             setStatus(4)
-            const response = await axios.put(`http://localhost:5000/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
+            const response = await axios.put(`${process.env.REACT_APP_API_URL}/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
         console.log(response.data);
         console.log("update Stocks");
             
         }
         if(e.target.value === 'nearby' && status < 5){
             setStatus(5)
-            const response = await axios.put(`http://localhost:5000/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
+            const response = await axios.put(`${process.env.REACT_APP_API_URL}/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
         console.log(response.data);
         console.log("update Stocks");
             
         }
         if(e.target.value === 'out-for-delivery' && status < 6){
             setStatus(6)
-            const response = await axios.put(`http://localhost:5000/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
+            const response = await axios.put(`${process.env.REACT_APP_API_URL}/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
         console.log(response.data);
         console.log("update Stocks");
             
         }
         if(e.target.value === 'delivered' && status < 7){
             setStatus(7)
-            const response = await axios.put(`http://localhost:5000/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
+            const response = await axios.put(`${process.env.REACT_APP_API_URL}/admin/update-status/${params.order_id}/${e.target.value}` ,{} , {withCredentials : true})
         console.log(response.data);
         console.log("update Stocks");
         }
@@ -96,7 +97,7 @@ const AdminOrder = () => {
     }
 
     if(isLoading){
-        console.log("loading...");
+        return <Buffer/>
     }else{
        
         

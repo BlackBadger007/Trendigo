@@ -47,7 +47,7 @@ const Signup = () => {
             toast("Password Mismatch")
             return
         }
-        const response = await axios.post("http://localhost:5000/auth/signup" , user , {withCredentials : true} )
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/signup` , user , {withCredentials : true} )
         console.log(response.data)
 
         if(response.data.message === "already"){

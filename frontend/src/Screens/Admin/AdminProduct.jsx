@@ -64,7 +64,7 @@ const AdminProduct = () => {
         formData.append('image', image); // Append the image file to FormData
 
         try {
-            const response = await axios.post("http://localhost:5000/upload", formData, {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/upload`, formData, {
                 // withCredentials: true,
                 headers: {
                     'Content-Type': 'multipart/form-data', // Set the correct content type
@@ -87,7 +87,7 @@ const AdminProduct = () => {
                 specifications : product.specification
             }
 
-            const response2 = await axios.post("http://localhost:5000/admin/create-product" , productCopy , {withCredentials : true})
+            const response2 = await axios.post(`${process.env.REACT_APP_API_URL}/admin/create-product` , productCopy , {withCredentials : true})
             console.log(response2.data);
             navigate(`/product/${response2.data._id}`)
 
@@ -110,7 +110,7 @@ const AdminProduct = () => {
             if (result.isConfirmed) {
 
                 // it is working properly
-                const response = await axios.post("http://localhost:5000/admin/remove-product" , {_id} , {withCredentials : true})
+                const response = await axios.post(`${process.env.REACT_APP_API_URL}/admin/remove-product` , {_id} , {withCredentials : true})
                 if(response.data.message === "removed"){
                     toast('Product Removed')
                     toast('Kindly reload the page') 

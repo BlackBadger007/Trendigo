@@ -1,6 +1,6 @@
 import { createApi , fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const baseQuery = fetchBaseQuery({baseUrl : "http://localhost:5000" , credentials : 'include'})
+const baseQuery = fetchBaseQuery({baseUrl : process.env.REACT_APP_API_URL , credentials : 'include'})
 
 export const apiSlice = createApi({
     baseQuery,
@@ -14,7 +14,7 @@ export const apiSlice = createApi({
         }),
         getProducts : builder.query({
             query : () => ({
-                url : "/"
+                url : "/home"
             }),
             keepUnusedDataFor : 5
         }),

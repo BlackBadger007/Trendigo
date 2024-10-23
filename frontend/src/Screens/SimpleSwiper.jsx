@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import '../Swiper.css'
 import { Link } from 'react-router-dom';
 import { FaChevronRight , FaChevronLeft } from 'react-icons/fa';
-// import './Swiper.css'; // Import your CSS file
 
 const SimpleSwiper = ({moreProduct}) => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    // const slides = Array.from({ length: 12 }, (_, i) => `Slide ${i + 1}`); // Create an array of slides
     const slides = moreProduct ; // Create an array of slides
 
     const moveSlide = (direction) => {
@@ -30,11 +28,7 @@ const SimpleSwiper = ({moreProduct}) => {
     return (
         <div className="swiper-container">
             <div className="swiper-wrapper" style={{ transform: `translateX(${offset}px)` }}>
-                {/* {slides.map((slide, index) => (
-                    <div className="swiper-slide" key={index}>
-                        {slide}
-                    </div>
-                ))} */}
+            
                 {slides.map((x) => (
                     <div className="swiper-slide" key={x._id} >
                         <Link to={`/product/${x._id}`} key={x._id} className="swip-category" >

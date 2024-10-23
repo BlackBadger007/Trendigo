@@ -1,12 +1,13 @@
 import { useGetAllOrdersQuery, useGetAllUsersQuery } from "../../slices/apiSlice"
 import Header from "../../components/Header";
+import Buffer from "../../components/Buffer";
 
 const AdminUsers = () => {
 
     const{data : users , isLoading , isError} = useGetAllUsersQuery()
 
     if(isLoading){
-
+        return <Buffer/>
     }else{
         console.log(users);
         

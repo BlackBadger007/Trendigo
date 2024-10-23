@@ -23,7 +23,7 @@ router.post('/', upload.single('image'), asyncHandler(async (req, res) => {
     const imagePath = req.file.path.replace(/\\/g, '/'); // Replace backslashes with forward slashes
     res.send({
         message: 'Image Uploaded',
-        image: `http://localhost:5000/${imagePath}` // Ensure it starts with a forward slash
+        image: `${process.env.REACT_APP_API_URL}/${imagePath}` // Ensure it starts with a forward slash
     });
 }));
 

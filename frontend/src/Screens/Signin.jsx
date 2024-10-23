@@ -44,7 +44,7 @@ const Signin = () => {
 
 
 
-                const response = await axios.post('http://localhost:5000/auth/signin' , data ,{ withCredentials : true } )
+                const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/signin` , data ,{ withCredentials : true } )
                 if(response.data.message !== 'user not found'){
                     localStorage.setItem('UserTrendigo' , JSON.stringify(response.data))
                     navigate('/')
