@@ -27,7 +27,7 @@ router.route('/user/:user_id').get(asyncHandler (async (req, res) => {
     res.json(orders)
 }))
 
-router.route('/generate/otp').get(asyncHandler (async (req , res) => {
+router.route('/generate/otp').post(asyncHandler (async (req , res) => {
     let otp = Math.floor(100000 + Math.random() * 900000).toString();
 
     const transporter = nodemailer.createTransport({
@@ -41,7 +41,7 @@ router.route('/generate/otp').get(asyncHandler (async (req , res) => {
         // Set up email data
     const mailOptions = {
         from: 'Trendigo', // Sender address
-        to: 'funnybonner1221605@gmail.com', // List of receivers
+        to:`${req.body.email}`, // List of receivers
         subject: 'OTP form Trendigo', // Subject line
         text: `OTP : ${otp}`, // Plain text body
     };

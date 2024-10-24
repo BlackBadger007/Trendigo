@@ -98,7 +98,8 @@ const PlaceOrder = () => {
 
             setOtp('check')
             setOtpLoading(true)
-            const {data} = await axios.get(`${API_URL}/order/generate/otp` , { 
+            const email = JSON.parse(localStorage.getItem('UserTrendigo')).email
+            const {data} = await axios.post(`${API_URL}/order/generate/otp` , {email}, { 
                 withCredentials : true
             })
             setGetOtp(data.otp)

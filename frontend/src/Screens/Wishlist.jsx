@@ -19,11 +19,17 @@ const Wishlist = () => {
 
     useEffect(() => {
         const wishlist = () =>{
-            if(localStorage.getItem('Wishlist') === 'null'){
-                setWishlist('')
+            if(localStorage.getItem('Wishlist')){
+
+                if(localStorage.getItem('Wishlist') === 'null'){
+                    setWishlist([])
+                }else{
+                    const item = JSON.parse(localStorage.getItem('Wishlist'))
+                    setWishlist(item)
+                }
             }else{
-                const item = JSON.parse(localStorage.getItem('Wishlist'))
-                setWishlist(item)
+                setWishlist([])
+
             }
         }
         wishlist()
@@ -66,7 +72,7 @@ const Wishlist = () => {
 
         <div className="wishlist">
             {
-                !wishlist ? <><h1 style={{fontSize:'40px' , fontWeight:'300',textAlign:'center' , color:'white' , marginTop:'100px'}} >Nothing added to Wishlist !</h1></> : 
+                wishlist.length === 0 ? <><h1 style={{fontSize:'40px' , fontWeight:'300',textAlign:'center' , color:'white' , marginTop:'100px'}} >Nothing added to Wishlist !</h1></> : 
                 <>
                 <h1 style={{fontSize:'40px' , fontWeight:'300' , color:'white' , margin:'0px 0px' , width:'60%' , margin:'auto' , marginTop:'30px'}} >Your Wishlist</h1>
                 {

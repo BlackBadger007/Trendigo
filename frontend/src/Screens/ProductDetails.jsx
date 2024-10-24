@@ -25,11 +25,16 @@ const ProductDetails = () => {
     const addToCart = async () => {
         let val = false;
         let items;
-        if(localStorage.getItem('Cart') === null){
-            items=[];
+        if(localStorage.getItem('Cart')){
+
+            if(localStorage.getItem('Cart') === 'null'){
+                items=[];
+            }else{
+                items=  JSON.parse(localStorage.getItem('Cart'))
+                await items.filter((x) => x._id === params.id && (val = true))
+            }
         }else{
-            items=  JSON.parse(localStorage.getItem('Cart'))
-            await items.filter((x) => x._id === params.id && (val = true))
+            items=[]
         }
         if(!val){
 
@@ -78,11 +83,16 @@ const ProductDetails = () => {
 
         let val = false;
         let items;
-        if(localStorage.getItem('Wishlist') === null){
+        if(!localStorage.getItem('Wishlist')){
             items = [];
         }else{
-            items = JSON.parse(localStorage.getItem('Wishlist'))
-            await items.filter((x) => x._id === params.id && (val = true))
+            if(localStorage.getItem('Wishlist') === 'null'){
+            items = [];
+
+            }else{
+                items = JSON.parse(localStorage.getItem('Wishlist'))
+                await items.filter((x) => x._id === params.id && (val = true))
+            }
         }
         if(!val){
             items.push(

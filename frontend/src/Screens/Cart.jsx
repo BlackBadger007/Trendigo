@@ -25,7 +25,7 @@ const Cart = () => {
                     let item = JSON.parse(localStorage.getItem('Cart'))
                     setCart(item)
                     let sum = 0;
-                    item.map((x) => (sum += Number(x.price)))
+                    item.map((x) => (sum += Number(x.price)*Number(x.qty)))
                     setTotal(sum)
                 }else{
 
